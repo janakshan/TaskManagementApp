@@ -1,26 +1,48 @@
 // app/(tabs)/home.js
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, TextInput } from 'react-native';
 import { Stack, router } from 'expo-router';
+import NavBar from '../../components/ui/NavBar';
+import Avatar from '../../components/ui/Avatar';
 
 export default function HomeScreen() {
   const tasks = [
     { id: 1, title: 'Complete wireframes', priority: 'High', project: 'Project 3' },
     { id: 2, title: 'Setup project structure', priority: 'Medium', project: 'Project 3' },
     { id: 3, title: 'Create components', priority: 'Low', project: 'Project 3' },
+    { id: 4, title: 'Implement authentication', priority: 'High', project: 'Project 1' },
+    { id: 5, title: 'Design database schema', priority: 'High', project: 'Project 2' },
+    { id: 6, title: 'Optimize API performance', priority: 'Medium', project: 'Project 1' },
+    { id: 7, title: 'Fix UI bugs', priority: 'Low', project: 'Project 3' },
+    { id: 8, title: 'Write unit tests', priority: 'Medium', project: 'Project 2' },
+    { id: 9, title: 'Deploy to staging', priority: 'High', project: 'Project 1' },
+    { id: 10, title: 'Refactor codebase', priority: 'Low', project: 'Project 2' },
+    { id: 11, title: 'Prepare project documentation', priority: 'Medium', project: 'Project 3' },
+    { id: 12, title: 'Setup CI/CD pipeline', priority: 'High', project: 'Project 2' },
+    { id: 13, title: 'Improve accessibility', priority: 'Low', project: 'Project 1' },
+    { id: 14, title: 'Integrate third-party API', priority: 'Medium', project: 'Project 2' },
+    { id: 15, title: 'Optimize images and assets', priority: 'Low', project: 'Project 3' },
+    { id: 16, title: 'Create landing page', priority: 'Medium', project: 'Project 1' },
+    { id: 17, title: 'Conduct code review', priority: 'High', project: 'Project 3' },
+    { id: 18, title: 'Implement push notifications', priority: 'Medium', project: 'Project 1' },
+    { id: 19, title: 'Setup monitoring tools', priority: 'Medium', project: 'Project 2' },
+    { id: 20, title: 'Conduct user testing', priority: 'High', project: 'Project 3' },
   ];
-
   return (
     <View style={styles.container}>
       <Stack.Screen options={{ headerShown: false }} />
+      <>
+        <NavBar
+          title={"Welcome Janakshan"}
+          rightChild={<Avatar
+            initials="JA"
+            size={50}
+            backgroundColor="#fff"
+            textColor="#8000ff"
+          />}
+          onRightPress={() => { console.log('AVat') }}
+        />
 
-      <View style={styles.header}>
-        <View style={styles.userInfo}>
-          <View style={styles.avatar}>
-            <Text style={styles.avatarText}>JD</Text>
-          </View>
-          <Text style={styles.username}>John Doe</Text>
-        </View>
-      </View>
+      </>
 
       <View style={styles.searchContainer}>
         <TextInput
@@ -79,51 +101,29 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-  header: {
-    backgroundColor: '#8000ff',
-    padding: 16,
-    paddingTop: 40,
-  },
-  userInfo: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  avatar: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  avatarText: {
-    fontWeight: 'bold',
-  },
-  username: {
-    color: '#fff',
-    marginLeft: 10,
-  },
   searchContainer: {
     padding: 16,
   },
   searchInput: {
     backgroundColor: '#f5f5f5',
     padding: 10,
-    borderRadius: 20,
+    borderRadius: 10,
   },
   tabContainer: {
     flexDirection: 'row',
     borderBottomWidth: 1,
     borderBottomColor: '#eee',
+    backgroundColor: '#eee'
   },
   tab: {
     flex: 1,
-    padding: 10,
+    padding: 20,
     alignItems: 'center',
   },
   activeTab: {
-    borderBottomWidth: 2,
+    borderBottomWidth: 3,
     borderBottomColor: '#8000ff',
+    // backgroundColor: '#8000ff'
   },
   tabText: {
     fontSize: 12,
@@ -170,5 +170,30 @@ const styles = StyleSheet.create({
   addButtonText: {
     color: '#fff',
     fontSize: 24,
+  },
+  userInfo: {
+    backgroundColor: '#211C84',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 20,
+    paddingHorizontal: 20
+  },
+  avatar: {
+    width: 50,
+    height: 50,
+    borderRadius: 30,
+    backgroundColor: '#fff',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  avatarText: {
+    fontWeight: 'bold',
+    fontSize: 20
+  },
+  username: {
+    color: '#fff',
+    marginLeft: 10,
+    fontSize: 20
   },
 });
