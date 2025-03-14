@@ -2,7 +2,7 @@
 import { View, Text, StyleSheet } from 'react-native';
 
 export default function CalendarScreen() {
-    // Calendar implementation would go here
+    // Calendar implementation would go here 
 
     return (
         <View style={styles.container}>
